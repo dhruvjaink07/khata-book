@@ -1,0 +1,177 @@
+{
+    "@@locale": "en",
+    "appTitle": "My Khata",
+    "monthYear": "{month} {year}",
+    "@monthYear": {
+        "description": "Displays the month and year like 'June 2025'",
+        "placeholders": {
+            "month": {},
+            "year": {}
+        }
+    },
+    "totalBalance": "Total Balance",
+    "balanceChange": "{percentage}% this month",
+    "@balanceChange": {
+        "description": "Shows the percentage change in balance for this month",
+        "placeholders": {
+            "percentage": {}
+        }
+    },
+    "thisMonth": "This Month",
+    "income": "Income",
+    "vsLastMonth": "{percentage}% vs last month",
+    "@vsLastMonth": {
+        "description": "Shows the percentage change compared to last month",
+        "placeholders": {
+            "percentage": {}
+        }
+    },
+    "expenseCategories": "Expense Categories",
+    "recentTransactions": "Recent Transactions",
+    "noTransactions": "No transactions yet.",
+    "noExpenseData": "No expense data for this month.",
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December",
+
+    "housing": "Housing",
+    "food": "Food",
+    "transport": "Transport",
+    "shopping": "Shopping",
+    "others": "Others",
+
+    "debit": "Debit",
+    "credit": "Credit",
+
+    "amount": "Amount",
+    "percentChange": "Percent Change",
+    "positiveChange": "Increase",
+    "negativeChange": "Decrease",
+
+    "category": "Category",
+    "percentage": "Percentage",
+
+    "noData": "No data available.",
+    "loading": "Loading...",
+    "error": "An error occurred.",
+
+    "addTransaction": "Add Transaction",
+    "expense": "Expense",
+    "incomeType": "Income",
+    "amountLabel": "Amount",
+    "amountHint": "0.00",
+    "categoryLabel": "Category",
+    "categoryHint": "Category",
+    "dateLabel": "Date",
+    "notesLabel": "Notes (Optional)",
+    "notesHint": "Add notes here...",
+    "save": "Save",
+    "pleaseSelectCategory": "Please select a category",
+    "pleaseEnterValidAmount": "Please enter a valid amount",
+    "transactionAdded": "Transaction added!",
+    "foodAndDining": "Food & Dining",
+    "groceries": "Groceries",
+    "healthAndFitness": "Health & Fitness",
+    "entertainment": "Entertainment",
+    "utilities": "Utilities",
+    "rent": "Rent",
+    "travel": "Travel",
+    "education": "Education",
+    "subscriptions": "Subscriptions",
+    "insurance": "Insurance",
+    "personalCare": "Personal Care",
+    "giftsAndDonations": "Gifts & Donations",
+    "othersCategory": "Others",
+    "salary": "Salary",
+    "freelance": "Freelance",
+    "interest": "Interest",
+    "investments": "Investments",
+    "gifts": "Gifts",
+    "rentalIncome": "Rental Income",
+    "refunds": "Refunds",
+    "otherIncome": "Other Income",
+
+    "searchTransactions": "Search transactions...",
+    "filterAll": "All",
+    "filterThisMonth": "This Month",
+    "filterGroceries": "Groceries",
+    "filterShopping": "Shopping",
+    "filterSalary": "Salary",
+    "filterRent": "Rent",
+    "filterTravel": "Travel",
+    "filterOthers": "Others",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "transaction": "Transaction",
+    "noTransactionsFound": "No transactions found.",
+    "amountCurrency": "{sign}{currency}{amount}",
+    "@amountCurrency": {
+        "description": "Transaction amount with sign, currency, and value",
+        "placeholders": {
+            "sign": {},
+            "currency": {},
+            "amount": {}
+        }
+    },
+
+    "navHome": "Home",
+    "navAdd": "Add",
+    "navList": "List",
+    "navReports": "Reports",
+    "navSettings": "Settings",
+
+    "myAnalytics": "My Analytics",
+    "addAtLeast3Transactions": "Add at least 3 transactions to view analytics.",
+    "dailyExpenses": "Daily Expenses",
+    "spendingByCategory": "Spending by Category",
+    "totalExpenses": "Total Expenses",
+    "highestSpending": "Highest Spending",
+    "biggestChange": "Biggest Change",
+    "comingSoon": "Coming soon",
+    "viewDetailedReport": "View Detailed Report",
+    "noData": "No data available.",
+    "onCategory": "on {category}",
+    "@onCategory": {
+        "description": "Used in analytics summary: e.g. '₹500 on Food'",
+        "placeholders": {
+            "category": {}
+        }
+    },
+
+    "monday": "Mon",
+    "tuesday": "Tue",
+    "wednesday": "Wed",
+    "thursday": "Thu",
+    "friday": "Fri",
+    "saturday": "Sat",
+    "sunday": "Sun",
+
+    "settings": "Settings",
+    "languageRegion": "Language & Region",
+    "language": "Language",
+    "currency": "Currency",
+    "appearance": "Appearance",
+    "darkMode": "Dark Mode",
+    "largeTextMode": "Large Text Mode",
+    "dataManagement": "Data Management",
+    "autoBackup": "Auto Backup",
+    "backupFrequency": "Backup Frequency",
+    "daily": "Daily",
+    "cloudSyncAndSharing": "Cloud Sync & Sharing",
+    "signInToSync": "Sign In to Sync",
+    "partnerEmailLabel": "Partner Email (only one allowed)",
+    "partnerEmailHint": "Enter partner's email to share",
+    "partnerLockedHint": "Partner email is locked. You can't change it.",
+    "onlyOnePartnerInfo": "You can only share with one partner. Leave blank to keep private.",
+    "exportAndShareKhata": "Export & Share Khata",
+    "syncFromCloud": "Sync from Cloud"
+}

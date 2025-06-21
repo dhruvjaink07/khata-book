@@ -1,0 +1,177 @@
+{
+    "@@locale": "mr",
+    "appTitle": "माझा खाता",
+    "monthYear": "{month} {year}",
+    "@monthYear": {
+        "description": "महिना आणि वर्ष दाखवते, जसे 'जून 2025'",
+        "placeholders": {
+            "month": {},
+            "year": {}
+        }
+    },
+    "totalBalance": "एकूण शिल्लक",
+    "balanceChange": "या महिन्यात {percentage}%",
+    "@balanceChange": {
+        "description": "या महिन्यातील शिल्लक बदल टक्केवारीत दाखवते",
+        "placeholders": {
+            "percentage": {}
+        }
+    },
+    "thisMonth": "हा महिना",
+    "income": "उत्पन्न",
+    "vsLastMonth": "मागील महिन्यापेक्षा {percentage}%",
+    "@vsLastMonth": {
+        "description": "मागील महिन्याशी तुलना दर्शवते",
+        "placeholders": {
+            "percentage": {}
+        }
+    },
+    "expenseCategories": "खर्च श्रेणी",
+    "recentTransactions": "अलीकडील व्यवहार",
+    "noTransactions": "अजून कोणतेही व्यवहार नाहीत.",
+    "noExpenseData": "या महिन्यासाठी खर्चाची माहिती नाही.",
+    "january": "जानेवारी",
+    "february": "फेब्रुवारी",
+    "march": "मार्च",
+    "april": "एप्रिल",
+    "may": "मे",
+    "june": "जून",
+    "july": "जुलै",
+    "august": "ऑगस्ट",
+    "september": "सप्टेंबर",
+    "october": "ऑक्टोबर",
+    "november": "नोव्हेंबर",
+    "december": "डिसेंबर",
+
+    "housing": "निवास",
+    "food": "अन्न",
+    "transport": "वाहतूक",
+    "shopping": "खरेदी",
+    "others": "इतर",
+
+    "debit": "डेबिट",
+    "credit": "क्रेडिट",
+
+    "amount": "रक्कम",
+    "percentChange": "टक्केवारी बदल",
+    "positiveChange": "वाढ",
+    "negativeChange": "कमी",
+
+    "category": "श्रेणी",
+    "percentage": "टक्केवारी",
+
+    "noData": "माहिती उपलब्ध नाही.",
+    "loading": "लोड होत आहे...",
+    "error": "त्रुटी आली आहे.",
+
+    "addTransaction": "व्यवहार जोडा",
+    "expense": "खर्च",
+    "incomeType": "उत्पन्न",
+    "amountLabel": "रक्कम",
+    "amountHint": "०.००",
+    "categoryLabel": "श्रेणी",
+    "categoryHint": "श्रेणी",
+    "dateLabel": "तारीख",
+    "notesLabel": "नोंदी (ऐच्छिक)",
+    "notesHint": "येथे नोंदी जोडा...",
+    "save": "जतन करा",
+    "pleaseSelectCategory": "कृपया श्रेणी निवडा",
+    "pleaseEnterValidAmount": "कृपया वैध रक्कम प्रविष्ट करा",
+    "transactionAdded": "व्यवहार जोडला!",
+    "foodAndDining": "अन्न व जेवण",
+    "groceries": "किराणा",
+    "healthAndFitness": "आरोग्य व फिटनेस",
+    "entertainment": "मनोरंजन",
+    "utilities": "उपयुक्तता",
+    "rent": "भाडे",
+    "travel": "प्रवास",
+    "education": "शिक्षण",
+    "subscriptions": "सदस्यता",
+    "insurance": "विमा",
+    "personalCare": "वैयक्तिक काळजी",
+    "giftsAndDonations": "भेटवस्तू व देणगी",
+    "othersCategory": "इतर",
+    "salary": "पगार",
+    "freelance": "फ्रीलान्स",
+    "interest": "व्याज",
+    "investments": "गुंतवणूक",
+    "gifts": "भेटवस्तू",
+    "rentalIncome": "भाड्याचे उत्पन्न",
+    "refunds": "परतावा",
+    "otherIncome": "इतर उत्पन्न",
+
+    "searchTransactions": "व्यवहार शोधा...",
+    "filterAll": "सर्व",
+    "filterThisMonth": "हा महिना",
+    "filterGroceries": "किराणा",
+    "filterShopping": "खरेदी",
+    "filterSalary": "पगार",
+    "filterRent": "भाडे",
+    "filterTravel": "प्रवास",
+    "filterOthers": "इतर",
+    "today": "आज",
+    "yesterday": "काल",
+    "transaction": "व्यवहार",
+    "noTransactionsFound": "कोणतेही व्यवहार सापडले नाहीत.",
+    "amountCurrency": "{sign}{currency}{amount}",
+    "@amountCurrency": {
+        "description": "व्यवहाराची रक्कम चिन्ह, चलन आणि मूल्यासह",
+        "placeholders": {
+            "sign": {},
+            "currency": {},
+            "amount": {}
+        }
+    },
+
+    "navHome": "मुख्यपृष्ठ",
+    "navAdd": "जोडा",
+    "navList": "यादी",
+    "navReports": "अहवाल",
+    "navSettings": "सेटिंग्ज",
+
+    "myAnalytics": "माझे विश्लेषण",
+    "addAtLeast3Transactions": "विश्लेषण पाहण्यासाठी किमान ३ व्यवहार जोडा.",
+    "dailyExpenses": "दैनंदिन खर्च",
+    "spendingByCategory": "श्रेणीनुसार खर्च",
+    "totalExpenses": "एकूण खर्च",
+    "highestSpending": "सर्वाधिक खर्च",
+    "biggestChange": "सर्वात मोठा बदल",
+    "comingSoon": "लवकरच येत आहे",
+    "viewDetailedReport": "तपशीलवार अहवाल पहा",
+    "noData": "माहिती उपलब्ध नाही.",
+    "onCategory": "{category} वर",
+    "@onCategory": {
+        "description": "विश्लेषण सारांशात वापरले जाते: उदा. '₹५०० अन्न वर'",
+        "placeholders": {
+            "category": {}
+        }
+    },
+
+    "monday": "सोम",
+    "tuesday": "मंगळ",
+    "wednesday": "बुध",
+    "thursday": "गुरु",
+    "friday": "शुक्र",
+    "saturday": "शनि",
+    "sunday": "रवि",
+
+    "settings": "सेटिंग्ज",
+    "languageRegion": "भाषा व प्रदेश",
+    "language": "भाषा",
+    "currency": "चलन",
+    "appearance": "दृश्यरूप",
+    "darkMode": "डार्क मोड",
+    "largeTextMode": "मोठा मजकूर मोड",
+    "dataManagement": "डेटा व्यवस्थापन",
+    "autoBackup": "स्वयंचलित बॅकअप",
+    "backupFrequency": "बॅकअप वारंवारता",
+    "daily": "दररोज",
+    "cloudSyncAndSharing": "क्लाउड सिंक आणि शेअरिंग",
+    "signInToSync": "सिंकसाठी साइन इन करा",
+    "partnerEmailLabel": "पार्टनर ईमेल (फक्त एकच परवानगी)",
+    "partnerEmailHint": "शेअर करण्यासाठी पार्टनरचा ईमेल टाका",
+    "partnerLockedHint": "पार्टनर ईमेल लॉक आहे. तुम्ही ते बदलू शकत नाही.",
+    "onlyOnePartnerInfo": "तुम्ही फक्त एका पार्टनरसोबत शेअर करू शकता. खाजगी ठेवण्यासाठी रिकामे ठेवा.",
+    "exportAndShareKhata": "खाता एक्सपोर्ट व शेअर करा",
+    "syncFromCloud": "क्लाउडमधून सिंक करा"
+}

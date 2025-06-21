@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "342028777346",
+    "project_id": "khata-71406",
+    "storage_bucket": "khata-71406.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342028777346:android:74aef80e053fc015eb419b",
+        "android_client_info": {
+          "package_name": "com.example.khata"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342028777346-a86a430hgl4fa1e1f1n0rnrcq5purddj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRRaefzVDpYr4SJCZAGvYxhOUhWYwdoWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342028777346-a86a430hgl4fa1e1f1n0rnrcq5purddj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "342028777346-1f4q7c6leno0qdh5eprhqb14h0ce0ive.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.khata"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

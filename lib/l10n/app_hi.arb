@@ -1,0 +1,176 @@
+{
+    "@@locale": "hi",
+    "appTitle": "मेरा खाता",
+    "monthYear": "{month} {year}",
+    "@monthYear": {
+        "description": "महीना और साल जैसे 'जून 2025' दिखाता है",
+        "placeholders": {
+            "month": {},
+            "year": {}
+        }
+    },
+    "totalBalance": "कुल शेष",
+    "balanceChange": "इस महीने {percentage}%",
+    "@balanceChange": {
+        "description": "इस महीने के लिए शेष में प्रतिशत परिवर्तन दिखाता है",
+        "placeholders": {
+            "percentage": {}
+        }
+    },
+    "thisMonth": "इस महीने",
+    "income": "आय",
+    "vsLastMonth": "पिछले महीने की तुलना में {percentage}%",
+    "@vsLastMonth": {
+        "description": "पिछले महीने की तुलना में प्रतिशत परिवर्तन दिखाता है",
+        "placeholders": {
+            "percentage": {}
+        }
+    },
+    "expenseCategories": "व्यय श्रेणियाँ",
+    "recentTransactions": "हाल की लेन-देन",
+    "noTransactions": "अभी तक कोई लेन-देन नहीं।",
+    "noExpenseData": "इस महीने के लिए कोई व्यय डेटा नहीं।",
+    "january": "जनवरी",
+    "february": "फरवरी",
+    "march": "मार्च",
+    "april": "अप्रैल",
+    "may": "मई",
+    "june": "जून",
+    "july": "जुलाई",
+    "august": "अगस्त",
+    "september": "सितंबर",
+    "october": "अक्टूबर",
+    "november": "नवंबर",
+    "december": "दिसंबर",
+
+    "housing": "आवास",
+    "food": "भोजन",
+    "transport": "परिवहन",
+    "shopping": "खरीदारी",
+    "others": "अन्य",
+
+    "debit": "डेबिट",
+    "credit": "क्रेडिट",
+
+    "amount": "राशि",
+    "percentChange": "प्रतिशत परिवर्तन",
+    "positiveChange": "वृद्धि",
+    "negativeChange": "कमी",
+
+    "category": "श्रेणी",
+    "percentage": "प्रतिशत",
+
+    "noData": "कोई डेटा उपलब्ध नहीं।",
+    "loading": "लोड हो रहा है...",
+    "error": "एक त्रुटि हुई।",
+
+    "addTransaction": "लेन-देन जोड़ें",
+    "expense": "व्यय",
+    "incomeType": "आय",
+    "amountLabel": "राशि",
+    "amountHint": "0.00",
+    "categoryLabel": "श्रेणी",
+    "categoryHint": "श्रेणी",
+    "dateLabel": "तारीख",
+    "notesLabel": "नोट्स (वैकल्पिक)",
+    "notesHint": "यहाँ नोट्स जोड़ें...",
+    "save": "सहेजें",
+    "pleaseSelectCategory": "कृपया एक श्रेणी चुनें",
+    "pleaseEnterValidAmount": "कृपया मान्य राशि दर्ज करें",
+    "transactionAdded": "लेन-देन जोड़ा गया!",
+    "foodAndDining": "भोजन और भोजनालय",
+    "groceries": "किराना",
+    "healthAndFitness": "स्वास्थ्य और फिटनेस",
+    "entertainment": "मनोरंजन",
+    "utilities": "यूटिलिटीज़",
+    "rent": "किराया",
+    "travel": "यात्रा",
+    "education": "शिक्षा",
+    "subscriptions": "सदस्यता",
+    "insurance": "बीमा",
+    "personalCare": "व्यक्तिगत देखभाल",
+    "giftsAndDonations": "उपहार और दान",
+    "othersCategory": "अन्य",
+    "salary": "वेतन",
+    "freelance": "फ्रीलांस",
+    "interest": "ब्याज",
+    "investments": "निवेश",
+    "gifts": "उपहार",
+    "rentalIncome": "किराया आय",
+    "refunds": "रिफंड",
+    "otherIncome": "अन्य आय",
+
+    "searchTransactions": "लेन-देन खोजें...",
+    "filterAll": "सभी",
+    "filterThisMonth": "इस महीने",
+    "filterGroceries": "किराना",
+    "filterShopping": "खरीदारी",
+    "filterSalary": "वेतन",
+    "filterRent": "किराया",
+    "filterTravel": "यात्रा",
+    "filterOthers": "अन्य",
+    "today": "आज",
+    "yesterday": "कल",
+    "transaction": "लेन-देन",
+    "noTransactionsFound": "कोई लेन-देन नहीं मिला।",
+    "amountCurrency": "{sign}{currency}{amount}",
+    "@amountCurrency": {
+        "description": "लेन-देन राशि चिह्न, मुद्रा और मान के साथ",
+        "placeholders": {
+            "sign": {},
+            "currency": {},
+            "amount": {}
+        }
+    },
+
+    "navHome": "होम",
+    "navAdd": "जोड़ें",
+    "navList": "सूची",
+    "navReports": "रिपोर्ट्स",
+    "navSettings": "सेटिंग्स",
+
+    "myAnalytics": "मेरी एनालिटिक्स",
+    "addAtLeast3Transactions": "एनालिटिक्स देखने के लिए कम से कम 3 लेन-देन जोड़ें।",
+    "dailyExpenses": "दैनिक खर्च",
+    "spendingByCategory": "श्रेणी अनुसार खर्च",
+    "totalExpenses": "कुल खर्च",
+    "highestSpending": "सबसे अधिक खर्च",
+    "biggestChange": "सबसे बड़ा बदलाव",
+    "comingSoon": "जल्द आ रहा है",
+    "viewDetailedReport": "विस्तृत रिपोर्ट देखें",
+    "onCategory": "{category} पर",
+    "@onCategory": {
+        "description": "एनालिटिक्स सारांश में: जैसे '₹500 भोजन पर'",
+        "placeholders": {
+            "category": {}
+        }
+    },
+
+    "monday": "सोम",
+    "tuesday": "मंगल",
+    "wednesday": "बुध",
+    "thursday": "गुरु",
+    "friday": "शुक्र",
+    "saturday": "शनि",
+    "sunday": "रवि",
+
+    "settings": "सेटिंग्स",
+    "languageRegion": "भाषा और क्षेत्र",
+    "language": "भाषा",
+    "currency": "मुद्रा",
+    "appearance": "रूप",
+    "darkMode": "डार्क मोड",
+    "largeTextMode": "बड़ा टेक्स्ट मोड",
+    "dataManagement": "डेटा प्रबंधन",
+    "autoBackup": "स्वचालित बैकअप",
+    "backupFrequency": "बैकअप आवृत्ति",
+    "daily": "दैनिक",
+    "cloudSyncAndSharing": "क्लाउड सिंक और शेयरिंग",
+    "signInToSync": "सिंक के लिए साइन इन करें",
+    "partnerEmailLabel": "पार्टनर ईमेल (केवल एक की अनुमति)",
+    "partnerEmailHint": "शेयर करने के लिए पार्टनर का ईमेल दर्ज करें",
+    "partnerLockedHint": "पार्टनर ईमेल लॉक है। आप इसे बदल नहीं सकते।",
+    "onlyOnePartnerInfo": "आप केवल एक पार्टनर के साथ शेयर कर सकते हैं। निजी रखने के लिए खाली छोड़ें।",
+    "exportAndShareKhata": "खाता एक्सपोर्ट और शेयर करें",
+    "syncFromCloud": "क्लाउड से सिंक करें"
+}

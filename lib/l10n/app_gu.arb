@@ -1,0 +1,177 @@
+{
+    "@@locale": "gu",
+    "appTitle": "મારું ખાતું",
+    "monthYear": "{month} {year}",
+    "@monthYear": {
+        "description": "મહિનો અને વર્ષ દર્શાવે છે, જેમ કે 'જૂન 2025'",
+        "placeholders": {
+            "month": {},
+            "year": {}
+        }
+    },
+    "totalBalance": "કુલ બેલેન્સ",
+    "balanceChange": "આ મહિને {percentage}%",
+    "@balanceChange": {
+        "description": "આ મહિને બેલેન્સમાં ટકાવારી ફેરફાર બતાવે છે",
+        "placeholders": {
+            "percentage": {}
+        }
+    },
+    "thisMonth": "આ મહિનો",
+    "income": "આવક",
+    "vsLastMonth": "ગયા મહિને કરતાં {percentage}%",
+    "@vsLastMonth": {
+        "description": "ગયા મહિનેની સરખામણીમાં ટકાવારી ફેરફાર બતાવે છે",
+        "placeholders": {
+            "percentage": {}
+        }
+    },
+    "expenseCategories": "ખર્ચ કેટેગરીઝ",
+    "recentTransactions": "તાજેતરના વ્યવહારો",
+    "noTransactions": "હજુ સુધી કોઈ વ્યવહાર નથી.",
+    "noExpenseData": "આ મહિના માટે કોઈ ખર્ચ માહિતી નથી.",
+    "january": "જાન્યુઆરી",
+    "february": "ફેબ્રુઆરી",
+    "march": "માર્ચ",
+    "april": "એપ્રિલ",
+    "may": "મે",
+    "june": "જૂન",
+    "july": "જુલાઈ",
+    "august": "ઑગસ્ટ",
+    "september": "સપ્ટેમ્બર",
+    "october": "ઑક્ટોબર",
+    "november": "નવેમ્બર",
+    "december": "ડિસેમ્બર",
+
+    "housing": "રહેઠાણ",
+    "food": "ખોરાક",
+    "transport": "પરિવહન",
+    "shopping": "ખરીદી",
+    "others": "અન્ય",
+
+    "debit": "ડેબિટ",
+    "credit": "ક્રેડિટ",
+
+    "amount": "રકમ",
+    "percentChange": "ટકાવારી ફેરફાર",
+    "positiveChange": "વધારો",
+    "negativeChange": "ઘટાડો",
+
+    "category": "કેટેગરી",
+    "percentage": "ટકાવારી",
+
+    "noData": "માહિતી ઉપલબ્ધ નથી.",
+    "loading": "લોડ થઈ રહ્યું છે...",
+    "error": "કોઈ ભૂલ આવી છે.",
+
+    "addTransaction": "વ્યવહાર ઉમેરો",
+    "expense": "ખર્ચ",
+    "incomeType": "આવક",
+    "amountLabel": "રકમ",
+    "amountHint": "૦.૦૦",
+    "categoryLabel": "કેટેગરી",
+    "categoryHint": "કેટેગરી",
+    "dateLabel": "તારીખ",
+    "notesLabel": "નોંધો (વૈકલ્પિક)",
+    "notesHint": "અહીં નોંધો ઉમેરો...",
+    "save": "સેવ કરો",
+    "pleaseSelectCategory": "કૃપા કરીને કેટેગરી પસંદ કરો",
+    "pleaseEnterValidAmount": "કૃપા કરીને માન્ય રકમ દાખલ કરો",
+    "transactionAdded": "વ્યવહાર ઉમેરાયો!",
+    "foodAndDining": "ખોરાક અને ભોજન",
+    "groceries": "કિરાણા",
+    "healthAndFitness": "આરોગ્ય અને ફિટનેસ",
+    "entertainment": "મનોરંજન",
+    "utilities": "યુટિલિટીઝ",
+    "rent": "ભાડું",
+    "travel": "પ્રવાસ",
+    "education": "શિક્ષણ",
+    "subscriptions": "સબ્સ્ક્રિપ્શન",
+    "insurance": "વીમા",
+    "personalCare": "વ્યક્તિગત કાળજી",
+    "giftsAndDonations": "ભેટ અને દાન",
+    "othersCategory": "અન્ય",
+    "salary": "પગાર",
+    "freelance": "ફ્રીલાન્સ",
+    "interest": "વ્યાજ",
+    "investments": "નિવેશ",
+    "gifts": "ભેટ",
+    "rentalIncome": "ભાડાની આવક",
+    "refunds": "પરતફેર",
+    "otherIncome": "અન્ય આવક",
+
+    "searchTransactions": "વ્યવહારો શોધો...",
+    "filterAll": "બધા",
+    "filterThisMonth": "આ મહિનો",
+    "filterGroceries": "કિરાણા",
+    "filterShopping": "ખરીદી",
+    "filterSalary": "પગાર",
+    "filterRent": "ભાડું",
+    "filterTravel": "પ્રવાસ",
+    "filterOthers": "અન્ય",
+    "today": "આજે",
+    "yesterday": "ગઈકાલે",
+    "transaction": "વ્યવહાર",
+    "noTransactionsFound": "કોઈ વ્યવહાર મળ્યા નથી.",
+    "amountCurrency": "{sign}{currency}{amount}",
+    "@amountCurrency": {
+        "description": "ચિહ્ન, ચલણ અને મૂલ્ય સાથે વ્યવહારની રકમ",
+        "placeholders": {
+            "sign": {},
+            "currency": {},
+            "amount": {}
+        }
+    },
+
+    "navHome": "હોમ",
+    "navAdd": "ઉમેરો",
+    "navList": "યાદી",
+    "navReports": "અહેવાલ",
+    "navSettings": "સેટિંગ્સ",
+
+    "myAnalytics": "મારું વિશ્લેષણ",
+    "addAtLeast3Transactions": "વિશ્લેષણ જોવા માટે ઓછામાં ઓછા ૩ વ્યવહાર ઉમેરો.",
+    "dailyExpenses": "દૈનિક ખર્ચ",
+    "spendingByCategory": "કેટેગરી પ્રમાણે ખર્ચ",
+    "totalExpenses": "કુલ ખર્ચ",
+    "highestSpending": "સૌથી વધુ ખર્ચ",
+    "biggestChange": "મોટો ફેરફાર",
+    "comingSoon": "આવતી કાલે",
+    "viewDetailedReport": "વિગતવાર અહેવાલ જુઓ",
+    "noData": "માહિતી ઉપલબ્ધ નથી.",
+    "onCategory": "{category} પર",
+    "@onCategory": {
+        "description": "વિશ્લેષણ સારાંશમાં વપરાય છે: ઉદા. '₹૫૦૦ ખોરાક પર'",
+        "placeholders": {
+            "category": {}
+        }
+    },
+
+    "monday": "સોમ",
+    "tuesday": "મંગળ",
+    "wednesday": "બુધ",
+    "thursday": "ગુરુ",
+    "friday": "શુક્ર",
+    "saturday": "શનિ",
+    "sunday": "રવિ",
+
+    "settings": "સેટિંગ્સ",
+    "languageRegion": "ભાષા અને પ્રદેશ",
+    "language": "ભાષા",
+    "currency": "ચલણ",
+    "appearance": "દેખાવ",
+    "darkMode": "ડાર્ક મોડ",
+    "largeTextMode": "મોટા અક્ષરો મોડ",
+    "dataManagement": "ડેટા મેનેજમેન્ટ",
+    "autoBackup": "ઓટો બેકઅપ",
+    "backupFrequency": "બેકઅપ આવૃત્તિ",
+    "daily": "દૈનિક",
+    "cloudSyncAndSharing": "ક્લાઉડ સિંક અને શેરિંગ",
+    "signInToSync": "સિંક માટે સાઇન ઇન કરો",
+    "partnerEmailLabel": "પાર્ટનર ઇમેઇલ (માત્ર એકની મંજૂરી)",
+    "partnerEmailHint": "શેર કરવા માટે પાર્ટનરનો ઇમેઇલ દાખલ કરો",
+    "partnerLockedHint": "પાર્ટનર ઇમેઇલ લોક છે. તમે તેને બદલી શકતા નથી.",
+    "onlyOnePartnerInfo": "તમે માત્ર એક પાર્ટનર સાથે શેર કરી શકો છો. ખાનગી રાખવા માટે ખાલી રાખો.",
+    "exportAndShareKhata": "ખાતા એક્સપોર્ટ અને શેર કરો",
+    "syncFromCloud": "ક્લાઉડમાંથી સિંક કરો"
+}
