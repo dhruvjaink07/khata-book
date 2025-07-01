@@ -28,6 +28,7 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  bool _signingIn = false;
   late bool darkMode;
   bool largeText = false;
   bool autoBackup = false;
@@ -44,9 +45,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
     darkMode = widget.isDark;
     _selectedLocale = widget.currentLocale ?? const Locale('en');
     _startKhataListener();
-    _connectivitySub = Connectivity().onConnectivityChanged.listen((result) {
-      if (result != ConnectivityResult.none) {
-        // Device is online, trigger sync
+    _connectivitySub = Connectivity().onConnectivityChanged.listen((results) {
+      if (results.isNotEmpty && !results.contains(ConnectivityResult.none)) {
         KhataSyncService().syncToCloud();
         KhataSyncService().syncFromCloud();
       }
@@ -75,13 +75,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Future<void> _handleSignIn(BuildContext context) async {
+    if (_signingIn) return; // Prevent double sign-in
+    setState(() => _signingIn = true);
     final authService = AuthService();
     final result = await authService.signInWithGoogle();
+    setState(() => _signingIn = false);
     if (result != null) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Signed in as ${authService.userEmail}')),
       );
       _startKhataListener();
+
+      // Trigger automatic sync when user signs in
+      _performInitialSync(context);
+
       setState(() {});
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -93,6 +100,41 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Future<void> _handleSignOut(BuildContext context) async {
     await AuthService().signOut();
     setState(() {});
+  }
+
+  Future<void> _performInitialSync(BuildContext context) async {
+    try {
+      // Show loading message
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Syncing your data...'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+
+      // Sync from cloud first to get shared data
+      final success = await KhataSyncService().syncFromCloud();
+      if (success) {
+        // Then sync local data to cloud
+        await KhataSyncService().syncToCloud();
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Sync completed successfully!'),
+            duration: Duration(seconds: 2),
+          ),
+        );
+      }
+    } catch (e) {
+      // Sync failed, but don't block the user
+      print('Initial sync failed: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Sync completed with some issues: ${e.toString()}'),
+          duration: const Duration(seconds: 3),
+        ),
+      );
+    }
   }
 
   Future<void> _handleExportAndShare(BuildContext context) async {
@@ -245,6 +287,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   _currentPartnerEmail != null &&
                   _currentPartnerEmail!.isNotEmpty &&
                   _currentPartnerEmail != authService.userEmail,
+              signingIn: _signingIn,
             ),
           ],
         ),

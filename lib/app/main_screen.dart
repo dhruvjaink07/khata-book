@@ -32,7 +32,6 @@ class _MainScreenState extends State<MainScreen> {
   late List<Widget> _screens;
 
   StreamSubscription? _khataSub;
-
   @override
   void initState() {
     super.initState();
@@ -49,8 +48,9 @@ class _MainScreenState extends State<MainScreen> {
       ),
     ];
     _startKhataListener();
-    KhataSyncService().syncToCloud();
-    KhataSyncService().syncFromCloud();
+
+    // Perform initial sync if user is already signed in
+    _performInitialSyncIfSignedIn();
   }
 
   void _startKhataListener() {
@@ -63,6 +63,22 @@ class _MainScreenState extends State<MainScreen> {
       ) {
         setState(() {}); // Triggers UI update when data changes
       });
+    }
+  }
+
+  Future<void> _performInitialSyncIfSignedIn() async {
+    final authService = AuthService();
+    if (authService.isSignedIn) {
+      try {
+        // Sync from cloud first to get shared data
+        await KhataSyncService().syncFromCloud();
+        // Then sync local data to cloud
+        await KhataSyncService().syncToCloud();
+        print('Initial sync completed successfully on app startup');
+      } catch (e) {
+        print('Initial sync failed on app startup: $e');
+        // Fail silently for better UX
+      }
     }
   }
 

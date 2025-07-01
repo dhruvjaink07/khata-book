@@ -145,7 +145,8 @@ class KhataSyncService {
   }
 
   Future<bool> _isNetworkAvailable() async {
-    final connectivityResult = await Connectivity().checkConnectivity();
-    return connectivityResult != ConnectivityResult.none;
+    final connectivityResults = await Connectivity().checkConnectivity();
+    return connectivityResults.isNotEmpty &&
+        !connectivityResults.contains(ConnectivityResult.none);
   }
 }
