@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:khata/l10n/app_localizations.dart';
 import 'package:khata/services/member_sharing_service.dart';
 import 'package:khata/features/settings/models/sharing_models.dart';
 import 'package:khata/features/settings/screens/qr_generator_screen.dart';
@@ -95,11 +96,12 @@ class _MembersManagementScreenState extends State<MembersManagementScreen> {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final loc = AppLocalizations.of(context)!;
 
     if (isLoading) {
       return Scaffold(
         appBar: AppBar(
-          title: const Text('Account Members'),
+          title: Text(loc.accountMembers),
           backgroundColor: colorScheme.primary,
           foregroundColor: colorScheme.onPrimary,
         ),
@@ -118,10 +120,10 @@ class _MembersManagementScreenState extends State<MembersManagementScreen> {
 
   Widget _buildOwnerView() {
     final colorScheme = Theme.of(context).colorScheme;
-
+    final loc = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Account Members'),
+        title: Text(loc.accountMembers),
         backgroundColor: colorScheme.primary,
         foregroundColor: colorScheme.onPrimary,
       ),
@@ -135,7 +137,7 @@ class _MembersManagementScreenState extends State<MembersManagementScreen> {
                 Expanded(
                   child: ElevatedButton.icon(
                     icon: const Icon(Icons.qr_code),
-                    label: const Text('Share Account'),
+                    label: Text(loc.shareAccount),
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size.fromHeight(48),
                     ),
@@ -152,7 +154,7 @@ class _MembersManagementScreenState extends State<MembersManagementScreen> {
                 Expanded(
                   child: OutlinedButton.icon(
                     icon: const Icon(Icons.qr_code_scanner),
-                    label: const Text('Join Account'),
+                    label: Text(loc.joinAccount),
                     style: OutlinedButton.styleFrom(
                       minimumSize: const Size.fromHeight(48),
                     ),
@@ -191,7 +193,7 @@ class _MembersManagementScreenState extends State<MembersManagementScreen> {
                         ),
                         const SizedBox(height: 16),
                         Text(
-                          'No members yet',
+                          loc.noMembersYet,
                           style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
                                 color: colorScheme.onSurface.withOpacity(0.5),
@@ -199,7 +201,7 @@ class _MembersManagementScreenState extends State<MembersManagementScreen> {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          'Share your QR code to invite others',
+                          loc.shareQrToInvite,
                           style: Theme.of(context).textTheme.bodyMedium
                               ?.copyWith(
                                 color: colorScheme.onSurface.withOpacity(0.5),
@@ -239,14 +241,14 @@ class _MembersManagementScreenState extends State<MembersManagementScreen> {
                           itemBuilder: (context) => [
                             PopupMenuItem(
                               value: 'remove',
-                              child: const Row(
+                              child: Row(
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.remove_circle_outline,
                                     color: Colors.red,
                                   ),
-                                  SizedBox(width: 8),
-                                  Text('Remove'),
+                                  const SizedBox(width: 8),
+                                  Text(AppLocalizations.of(context)!.remove),
                                 ],
                               ),
                             ),
@@ -271,10 +273,10 @@ class _MembersManagementScreenState extends State<MembersManagementScreen> {
 
   Widget _buildMemberView() {
     final colorScheme = Theme.of(context).colorScheme;
-
+    final loc = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Shared Account'),
+        title: Text(loc.shareAccount),
         backgroundColor: colorScheme.primary,
         foregroundColor: colorScheme.onPrimary,
       ),
@@ -289,7 +291,7 @@ class _MembersManagementScreenState extends State<MembersManagementScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'You are a member of:',
+                      loc.youAreAMemberOf,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -324,8 +326,8 @@ class _MembersManagementScreenState extends State<MembersManagementScreen> {
               width: double.infinity,
               child: OutlinedButton.icon(
                 icon: const Icon(Icons.exit_to_app, color: Colors.red),
-                label: const Text(
-                  'Leave Shared Account',
+                label: Text(
+                  loc.leaveSharedAccount,
                   style: TextStyle(color: Colors.red),
                 ),
                 style: OutlinedButton.styleFrom(
@@ -343,7 +345,7 @@ class _MembersManagementScreenState extends State<MembersManagementScreen> {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                'As a member, you can view and add transactions to this shared account. Only the account owner can manage members.',
+                loc.memberInfo,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: colorScheme.onSurface.withOpacity(0.7),
                 ),

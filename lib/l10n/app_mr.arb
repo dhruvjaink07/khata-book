@@ -173,5 +173,27 @@
     "partnerLockedHint": "पार्टनर ईमेल लॉक आहे. तुम्ही ते बदलू शकत नाही.",
     "onlyOnePartnerInfo": "तुम्ही फक्त एका पार्टनरसोबत शेअर करू शकता. खाजगी ठेवण्यासाठी रिकामे ठेवा.",
     "exportAndShareKhata": "खाता एक्सपोर्ट व शेअर करा",
-    "syncFromCloud": "क्लाउडमधून सिंक करा"
+    "syncFromCloud": "क्लाउडमधून सिंक करा",
+    "leaveSharedAccount": "शेअर केलेला खाते सोडा",
+    "shareAccount": "खाते शेअर करा",
+    "joinAccount": "खात्यात सामील व्हा",
+    "noMembersYet": "अजून सदस्य नाहीत.",
+    "accountMembers": "खात्याचे सदस्य",
+    "shareQrToInvite": "इतरांना आमंत्रित करण्यासाठी तुमचा QR कोड शेअर करा.",
+    "youAreAMemberOf": "आपण या खात्याचे सदस्य आहात:",
+    "remove": "काढा",
+    "memberInfo": "सदस्य म्हणून, आपण या सामायिक खात्यात व्यवहार पाहू आणि जोडू शकता. फक्त खाते मालक सदस्यांचे व्यवस्थापन करू शकतो.",
+
+    "shareKhataAccount": "खाते शेअर करा",
+    "shareYourKhataAccount": "तुमचे खाते शेअर करा",
+    "letOthersScanQr": "इतरांना हा QR कोड स्कॅन करू द्या जेणेकरून ते तुमच्या खात्यात सामील होऊ शकतील आणि खर्च शेअर करू शकतील",
+    "failedToGenerateQr": "QR कोड तयार करण्यात अयशस्वी",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "qrExpiresIn10Min": "हा QR कोड 10 मिनिटांत कालबाह्य होईल",
+    "max5Members": "कमाल 5 सदस्य तुमच्या खात्यात सामील होऊ शकतात",
+    "generateNewQr": "नवीन QR कोड तयार करा",
+    "scanQrCode": "QR कोड स्कॅन करा",
+    "positionQrInFrame": "QR कोड फ्रेममध्ये ठेवा",
+    "cameraWillScanAutomatically": "QR कोड ओळखला गेल्यावर कॅमेरा आपोआप स्कॅन करेल",
+    "successfullyJoinedSharedAccount": "सामायिक खात्यात यशस्वीरित्या सामील झाले!"
 }

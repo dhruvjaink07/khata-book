@@ -872,6 +872,132 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sync from Cloud'**
   String get syncFromCloud;
+
+  /// No description provided for @leaveSharedAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave Shared Account'**
+  String get leaveSharedAccount;
+
+  /// No description provided for @shareAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Account'**
+  String get shareAccount;
+
+  /// No description provided for @joinAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Join Account'**
+  String get joinAccount;
+
+  /// No description provided for @noMembersYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No members yet.'**
+  String get noMembersYet;
+
+  /// No description provided for @accountMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'Account Members'**
+  String get accountMembers;
+
+  /// No description provided for @shareQrToInvite.
+  ///
+  /// In en, this message translates to:
+  /// **'Share your QR code to invite others.'**
+  String get shareQrToInvite;
+
+  /// No description provided for @youAreAMemberOf.
+  ///
+  /// In en, this message translates to:
+  /// **'You are a member of:'**
+  String get youAreAMemberOf;
+
+  /// No description provided for @remove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get remove;
+
+  /// No description provided for @memberInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'As a member, you can view and add transactions to this shared account. Only the account owner can manage members.'**
+  String get memberInfo;
+
+  /// No description provided for @shareKhataAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Khata Account'**
+  String get shareKhataAccount;
+
+  /// No description provided for @shareYourKhataAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Your Khata Account'**
+  String get shareYourKhataAccount;
+
+  /// No description provided for @letOthersScanQr.
+  ///
+  /// In en, this message translates to:
+  /// **'Let others scan this QR code to join your account and share expenses'**
+  String get letOthersScanQr;
+
+  /// No description provided for @failedToGenerateQr.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to generate QR code'**
+  String get failedToGenerateQr;
+
+  /// No description provided for @tryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try Again'**
+  String get tryAgain;
+
+  /// No description provided for @qrExpiresIn10Min.
+  ///
+  /// In en, this message translates to:
+  /// **'This QR code expires in 10 minutes'**
+  String get qrExpiresIn10Min;
+
+  /// No description provided for @max5Members.
+  ///
+  /// In en, this message translates to:
+  /// **'Maximum 5 members can join your account'**
+  String get max5Members;
+
+  /// No description provided for @generateNewQr.
+  ///
+  /// In en, this message translates to:
+  /// **'Generate New QR Code'**
+  String get generateNewQr;
+
+  /// No description provided for @scanQrCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan QR Code'**
+  String get scanQrCode;
+
+  /// No description provided for @positionQrInFrame.
+  ///
+  /// In en, this message translates to:
+  /// **'Position the QR code within the frame'**
+  String get positionQrInFrame;
+
+  /// No description provided for @cameraWillScanAutomatically.
+  ///
+  /// In en, this message translates to:
+  /// **'The camera will automatically scan when a QR code is detected'**
+  String get cameraWillScanAutomatically;
+
+  /// No description provided for @successfullyJoinedSharedAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Successfully joined the shared account!'**
+  String get successfullyJoinedSharedAccount;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -29,7 +29,9 @@ class MemberSharingService {
       ownerEmail: user.email ?? '',
       ownerPhotoUrl: user.photoURL ?? '',
       createdAt: DateTime.now(),
-      expiresAt: DateTime.now().add(const Duration(minutes: 10)),
+      expiresAt: DateTime.now().add(
+        const Duration(days: 30),
+      ), // 30 days instead of 10 minutes
     );
 
     await _firestore
@@ -173,14 +175,12 @@ class MemberSharingService {
   Future<List<AccountMember>> getAccountMembers() async {
     final user = _auth.currentUser;
     if (user == null) return [];
-
     final membersSnapshot = await _firestore
         .collection('shared_accounts')
         .doc(user.uid)
         .collection('members')
         .where('isActive', isEqualTo: true)
-        .orderBy('joinedAt')
-        .get();
+        .get(); // Removed orderBy temporarily
 
     return membersSnapshot.docs
         .map(
@@ -193,14 +193,12 @@ class MemberSharingService {
   Stream<List<AccountMember>> getMembers() {
     final user = _auth.currentUser;
     if (user == null) return Stream.value([]);
-
     return _firestore
         .collection('shared_accounts')
         .doc(user.uid)
         .collection('members')
         .where('isActive', isEqualTo: true)
-        .orderBy('joinedAt')
-        .snapshots()
+        .snapshots() // Removed orderBy temporarily
         .map(
           (snapshot) => snapshot.docs
               .map(

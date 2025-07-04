@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:khata/l10n/app_localizations.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:khata/services/member_sharing_service.dart';
 
@@ -18,10 +19,11 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final loc = AppLocalizations.of(context)!; // <-- For easier access
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Scan QR Code'),
+        title: Text(loc.scanQrCode), // <-- Localized
         backgroundColor: colorScheme.primary,
         foregroundColor: colorScheme.onPrimary,
         actions: [
@@ -106,7 +108,7 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
                     const SizedBox(height: 16),
                   ],
                   Text(
-                    'Position the QR code within the frame',
+                    loc.positionQrInFrame, // <-- Localized
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
@@ -114,7 +116,7 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'The camera will automatically scan when a QR code is detected',
+                    loc.cameraWillScanAutomatically, // <-- Localized
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       color: colorScheme.onSurface.withOpacity(0.7),
                     ),
@@ -151,8 +153,12 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
       if (success && mounted) {
         Navigator.of(context).pop(true); // Return success
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Successfully joined the shared account!'),
+          SnackBar(
+            content: Text(
+              AppLocalizations.of(
+                context,
+              )!.successfullyJoinedSharedAccount, // <-- Localized
+            ),
             backgroundColor: Colors.green,
           ),
         );

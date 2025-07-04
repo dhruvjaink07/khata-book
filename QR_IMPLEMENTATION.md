@@ -70,7 +70,7 @@ We've implemented a QR-based account sharing system for Khata that allows users 
 1. Sign in with Google
 2. In Settings, click "Share QR" in the Account Sharing section
 3. Show generated QR code to person you want to invite
-4. QR code expires in 10 minutes
+4. QR code expires in 30 days
 
 ### To Join Account:
 1. Sign in with Google

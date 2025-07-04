@@ -404,4 +404,67 @@ class AppLocalizationsGu extends AppLocalizations {
 
   @override
   String get syncFromCloud => 'ક્લાઉડમાંથી સિંક કરો';
+
+  @override
+  String get leaveSharedAccount => 'શેર કરેલું ખાતું છોડો';
+
+  @override
+  String get shareAccount => 'ખાતું શેર કરો';
+
+  @override
+  String get joinAccount => 'ખાતામાં જોડાઓ';
+
+  @override
+  String get noMembersYet => 'હજુ સુધી કોઈ સભ્ય નથી.';
+
+  @override
+  String get accountMembers => 'ખાતાના સભ્યો';
+
+  @override
+  String get shareQrToInvite => 'અન્યને આમંત્રિત કરવા માટે તમારો QR કોડ શેર કરો.';
+
+  @override
+  String get youAreAMemberOf => 'તમે આ ખાતાના સભ્ય છો:';
+
+  @override
+  String get remove => 'દૂર કરો';
+
+  @override
+  String get memberInfo => 'સભ્ય તરીકે, તમે આ શેર કરેલા ખાતામાં વ્યવહારો જોઈ અને ઉમેરી શકો છો. માત્ર ખાતા માલિક જ સભ્યોનું સંચાલન કરી શકે છે.';
+
+  @override
+  String get shareKhataAccount => 'ખાતે શેર કરો';
+
+  @override
+  String get shareYourKhataAccount => 'તમે ખાતું શેર કરો';
+
+  @override
+  String get letOthersScanQr => 'ઇતર લોકોને આ QR કોડ સ્કેન કરવા દો જેથી તેઓ તમારા ખાતામાં જોડાઈ શકે અને ખર્ચ શેર કરી શકે';
+
+  @override
+  String get failedToGenerateQr => 'QR કોડ બનાવવામાં નિષ્ફળ';
+
+  @override
+  String get tryAgain => 'ફરીથી પ્રયાસ કરો';
+
+  @override
+  String get qrExpiresIn10Min => 'આ QR કોડ 10 મિનિટમાં સમાપ્ત થશે';
+
+  @override
+  String get max5Members => 'તમારા ખાતામાં મહત્તમ 5 સભ્યો સામેલ થઈ શકે છે';
+
+  @override
+  String get generateNewQr => 'નવો QR કોડ બનાવો';
+
+  @override
+  String get scanQrCode => 'QR કોડ સ્કેન કરો';
+
+  @override
+  String get positionQrInFrame => 'QR કોડને ફ્રેમની અંદર રાખો';
+
+  @override
+  String get cameraWillScanAutomatically => 'QR કોડ ઓળખાય ત્યારે કેમેરા આપમેળે સ્કેન કરશે';
+
+  @override
+  String get successfullyJoinedSharedAccount => 'શેર કરેલા ખાતામાં સફળતાપૂર્વક જોડાયા!';
 }

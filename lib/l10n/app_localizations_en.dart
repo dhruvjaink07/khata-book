@@ -404,4 +404,67 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get syncFromCloud => 'Sync from Cloud';
+
+  @override
+  String get leaveSharedAccount => 'Leave Shared Account';
+
+  @override
+  String get shareAccount => 'Share Account';
+
+  @override
+  String get joinAccount => 'Join Account';
+
+  @override
+  String get noMembersYet => 'No members yet.';
+
+  @override
+  String get accountMembers => 'Account Members';
+
+  @override
+  String get shareQrToInvite => 'Share your QR code to invite others.';
+
+  @override
+  String get youAreAMemberOf => 'You are a member of:';
+
+  @override
+  String get remove => 'Remove';
+
+  @override
+  String get memberInfo => 'As a member, you can view and add transactions to this shared account. Only the account owner can manage members.';
+
+  @override
+  String get shareKhataAccount => 'Share Khata Account';
+
+  @override
+  String get shareYourKhataAccount => 'Share Your Khata Account';
+
+  @override
+  String get letOthersScanQr => 'Let others scan this QR code to join your account and share expenses';
+
+  @override
+  String get failedToGenerateQr => 'Failed to generate QR code';
+
+  @override
+  String get tryAgain => 'Try Again';
+
+  @override
+  String get qrExpiresIn10Min => 'This QR code expires in 10 minutes';
+
+  @override
+  String get max5Members => 'Maximum 5 members can join your account';
+
+  @override
+  String get generateNewQr => 'Generate New QR Code';
+
+  @override
+  String get scanQrCode => 'Scan QR Code';
+
+  @override
+  String get positionQrInFrame => 'Position the QR code within the frame';
+
+  @override
+  String get cameraWillScanAutomatically => 'The camera will automatically scan when a QR code is detected';
+
+  @override
+  String get successfullyJoinedSharedAccount => 'Successfully joined the shared account!';
 }

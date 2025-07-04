@@ -6,7 +6,7 @@ import 'package:khata/features/transactions/domain/transaction.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:khata/firebase_options.dart';
 import 'package:khata/l10n/app_localizations.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:khata/services/hive_settings_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,9 +14,9 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   Hive.registerAdapter(TransactionAdapter());
   await Hive.openBox<Transaction>('transactions');
-  final prefs = await SharedPreferences.getInstance();
-  final isDark = prefs.getBool('darkMode') ?? false;
-  final localeCode = prefs.getString('locale') ?? 'en';
+  await HiveSettingsService.init();
+  final isDark = HiveSettingsService.isDarkMode;
+  final localeCode = HiveSettingsService.locale;
   runApp(MyApp(isDark: isDark, initialLocale: Locale(localeCode)));
 }
 
@@ -32,17 +32,14 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   late bool _isDark = widget.isDark;
   late Locale _locale = widget.initialLocale;
-
   void _toggleDarkMode(bool value) async {
     setState(() => _isDark = value);
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('darkMode', value);
+    await HiveSettingsService.setDarkMode(value);
   }
 
   void _changeLocale(Locale locale) async {
     setState(() => _locale = locale);
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('locale', locale.languageCode);
+    await HiveSettingsService.setLocale(locale.languageCode);
   }
 
   @override

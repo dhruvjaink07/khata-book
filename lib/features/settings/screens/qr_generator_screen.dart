@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:khata/l10n/app_localizations.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:khata/services/member_sharing_service.dart';
 
@@ -43,10 +44,11 @@ class _QRGeneratorScreenState extends State<QRGeneratorScreen> {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final loc = AppLocalizations.of(context)!; // <-- For easier access
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Share Khata Account'),
+        title: Text(loc.shareKhataAccount),
         backgroundColor: colorScheme.primary,
         foregroundColor: colorScheme.onPrimary,
       ),
@@ -66,7 +68,7 @@ class _QRGeneratorScreenState extends State<QRGeneratorScreen> {
                     Icon(Icons.qr_code, size: 48, color: colorScheme.primary),
                     const SizedBox(height: 16),
                     Text(
-                      'Share Your Khata Account',
+                      loc.shareYourKhataAccount,
                       style: Theme.of(context).textTheme.headlineSmall
                           ?.copyWith(
                             fontWeight: FontWeight.bold,
@@ -76,7 +78,7 @@ class _QRGeneratorScreenState extends State<QRGeneratorScreen> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Let others scan this QR code to join your account and share expenses',
+                      loc.letOthersScanQr,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: colorScheme.onSurface.withOpacity(0.7),
                       ),
@@ -95,7 +97,7 @@ class _QRGeneratorScreenState extends State<QRGeneratorScreen> {
                   Icon(Icons.error_outline, size: 64, color: colorScheme.error),
                   const SizedBox(height: 16),
                   Text(
-                    'Failed to generate QR code',
+                    loc.failedToGenerateQr,
                     style: Theme.of(
                       context,
                     ).textTheme.titleMedium?.copyWith(color: colorScheme.error),
@@ -109,7 +111,7 @@ class _QRGeneratorScreenState extends State<QRGeneratorScreen> {
                   const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: _generateQR,
-                    child: const Text('Try Again'),
+                    child: Text(loc.tryAgain),
                   ),
                 ],
               )
@@ -156,7 +158,7 @@ class _QRGeneratorScreenState extends State<QRGeneratorScreen> {
                               ),
                               const SizedBox(width: 8),
                               Text(
-                                'This QR code expires in 10 minutes',
+                                loc.qrExpiresIn10Min,
                                 style: Theme.of(context).textTheme.bodyMedium
                                     ?.copyWith(
                                       color: colorScheme.onPrimaryContainer,
@@ -175,7 +177,7 @@ class _QRGeneratorScreenState extends State<QRGeneratorScreen> {
                               ),
                               const SizedBox(width: 8),
                               Text(
-                                'Maximum 5 members can join your account',
+                                loc.max5Members,
                                 style: Theme.of(context).textTheme.bodyMedium
                                     ?.copyWith(
                                       color: colorScheme.onPrimaryContainer,
@@ -191,7 +193,7 @@ class _QRGeneratorScreenState extends State<QRGeneratorScreen> {
                       width: double.infinity,
                       child: ElevatedButton.icon(
                         icon: const Icon(Icons.refresh),
-                        label: const Text('Generate New QR Code'),
+                        label: Text(loc.generateNewQr),
                         style: ElevatedButton.styleFrom(
                           minimumSize: const Size.fromHeight(48),
                         ),

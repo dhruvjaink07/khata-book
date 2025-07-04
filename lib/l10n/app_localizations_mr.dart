@@ -404,4 +404,67 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get syncFromCloud => 'क्लाउडमधून सिंक करा';
+
+  @override
+  String get leaveSharedAccount => 'शेअर केलेला खाते सोडा';
+
+  @override
+  String get shareAccount => 'खाते शेअर करा';
+
+  @override
+  String get joinAccount => 'खात्यात सामील व्हा';
+
+  @override
+  String get noMembersYet => 'अजून सदस्य नाहीत.';
+
+  @override
+  String get accountMembers => 'खात्याचे सदस्य';
+
+  @override
+  String get shareQrToInvite => 'इतरांना आमंत्रित करण्यासाठी तुमचा QR कोड शेअर करा.';
+
+  @override
+  String get youAreAMemberOf => 'आपण या खात्याचे सदस्य आहात:';
+
+  @override
+  String get remove => 'काढा';
+
+  @override
+  String get memberInfo => 'सदस्य म्हणून, आपण या सामायिक खात्यात व्यवहार पाहू आणि जोडू शकता. फक्त खाते मालक सदस्यांचे व्यवस्थापन करू शकतो.';
+
+  @override
+  String get shareKhataAccount => 'खाते शेअर करा';
+
+  @override
+  String get shareYourKhataAccount => 'तुमचे खाते शेअर करा';
+
+  @override
+  String get letOthersScanQr => 'इतरांना हा QR कोड स्कॅन करू द्या जेणेकरून ते तुमच्या खात्यात सामील होऊ शकतील आणि खर्च शेअर करू शकतील';
+
+  @override
+  String get failedToGenerateQr => 'QR कोड तयार करण्यात अयशस्वी';
+
+  @override
+  String get tryAgain => 'पुन्हा प्रयत्न करा';
+
+  @override
+  String get qrExpiresIn10Min => 'हा QR कोड 10 मिनिटांत कालबाह्य होईल';
+
+  @override
+  String get max5Members => 'कमाल 5 सदस्य तुमच्या खात्यात सामील होऊ शकतात';
+
+  @override
+  String get generateNewQr => 'नवीन QR कोड तयार करा';
+
+  @override
+  String get scanQrCode => 'QR कोड स्कॅन करा';
+
+  @override
+  String get positionQrInFrame => 'QR कोड फ्रेममध्ये ठेवा';
+
+  @override
+  String get cameraWillScanAutomatically => 'QR कोड ओळखला गेल्यावर कॅमेरा आपोआप स्कॅन करेल';
+
+  @override
+  String get successfullyJoinedSharedAccount => 'सामायिक खात्यात यशस्वीरित्या सामील झाले!';
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:khata/services/hive_settings_service.dart';
 
 class SettingsService {
   final supportedLocales = const [
@@ -37,8 +37,7 @@ class SettingsService {
     Locale locale,
     ValueChanged<Locale>? onLocaleChanged,
   ) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('locale', locale.languageCode);
+    await HiveSettingsService.setLocale(locale.languageCode);
     if (onLocaleChanged != null) onLocaleChanged(locale);
   }
 }

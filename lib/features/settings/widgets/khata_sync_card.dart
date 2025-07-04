@@ -779,7 +779,7 @@ class _QRScannerDialogState extends State<QRScannerDialog> {
   }
 
   void _onDetect(BarcodeCapture capture) async {
-    if (isProcessing) return;
+    if (isProcessing || !mounted) return;
 
     final List<Barcode> barcodes = capture.barcodes;
     if (barcodes.isEmpty) return;
@@ -787,6 +787,7 @@ class _QRScannerDialogState extends State<QRScannerDialog> {
     final barcode = barcodes.first;
     if (barcode.rawValue == null) return;
 
+    if (!mounted) return;
     setState(() {
       isProcessing = true;
       error = null;
@@ -801,6 +802,7 @@ class _QRScannerDialogState extends State<QRScannerDialog> {
         Navigator.of(context).pop(true);
       }
     } catch (e) {
+      if (!mounted) return;
       setState(() {
         error = e.toString().replaceFirst('Exception: ', '');
         isProcessing = false;

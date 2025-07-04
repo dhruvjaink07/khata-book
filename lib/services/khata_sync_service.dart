@@ -10,7 +10,6 @@ class KhataSyncService {
   static final KhataSyncService _instance = KhataSyncService._internal();
   factory KhataSyncService() => _instance;
   KhataSyncService._internal();
-
   /// Syncs all local transactions to Firestore for the current user and partner.
   Future<void> syncToCloud({String? partnerEmail}) async {
     if (!await _isNetworkAvailable()) {
@@ -21,11 +20,15 @@ class KhataSyncService {
     final authService = AuthService();
     if (!authService.isSignedIn) return;
     final userEmail = authService.userEmail!;
+    print('🔄 SYNC TO CLOUD: Starting sync for user: $userEmail');
+    
     final khataDoc = FirebaseFirestore.instance
         .collection('khatas')
         .doc(userEmail);
     final box = Hive.box<Transaction>('transactions');
     final txns = await Future.wait(box.values.map((t) => t.toEncryptedJson()));
+    
+    print('🔄 SYNC TO CLOUD: Found ${txns.length} transactions to sync');
 
     await khataDoc.set({
       'ownerEmail': userEmail,
@@ -35,6 +38,8 @@ class KhataSyncService {
       'transactions': txns,
       'lastSynced': DateTime.now().toUtc().toIso8601String(),
     });
+    
+    print('✅ SYNC TO CLOUD: Successfully synced ${txns.length} transactions');
   }
 
   /// Fetches and imports transactions from Firestore for the current user (owner or partner).
