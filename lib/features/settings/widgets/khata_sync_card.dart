@@ -107,7 +107,7 @@ class _KhataSyncCardState extends State<KhataSyncCard> {
               const SizedBox(height: 16),
               if (isLoadingSharedInfo)
                 const Center(child: CircularProgressIndicator())
-              else if (sharedAccountInfo != null)
+              else if (sharedAccountInfo != null && !sharedAccountInfo!.isOwner)
                 _buildMemberSection(context, colorScheme)
               else
                 _buildOwnerSection(context, colorScheme),

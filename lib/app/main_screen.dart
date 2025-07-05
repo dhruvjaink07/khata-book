@@ -8,6 +8,7 @@ import '../features/reports/analytics_screen.dart';
 import '../features/settings/settings_screen.dart';
 import '../features/transactions/transaction_list_screen.dart';
 import 'package:khata/services/khata_sync_service.dart';
+import 'package:khata/services/member_sharing_service.dart';
 
 class MainScreen extends StatefulWidget {
   final ValueChanged<bool>? onThemeChanged;
@@ -81,6 +82,9 @@ class _MainScreenState extends State<MainScreen> {
     final authService = AuthService();
     if (authService.isSignedIn) {
       try {
+        // Clean up any data inconsistencies first
+        await MemberSharingService().cleanupDataInconsistencies();
+
         // Sync from cloud first to get shared data
         await KhataSyncService().syncFromCloud();
         // Then sync local data to cloud

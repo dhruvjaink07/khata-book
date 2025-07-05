@@ -133,6 +133,9 @@ class MemberSharingService {
     final user = _auth.currentUser;
     if (user == null) return null;
 
+    // First clean up any data inconsistencies
+    await cleanupDataInconsistencies();
+
     // First check if user is a member of another account
     final memberAccountDoc = await _firestore
         .collection('member_accounts')
@@ -368,6 +371,37 @@ class MemberSharingService {
       print('✅ Updated sharedWith list for owner $ownerEmail: $sharedWith');
     } catch (e) {
       print('❌ Error updating sharedWith list: $e');
+    }
+  }
+
+  /// Cleans up data inconsistencies where a user might appear as both owner and member
+  Future<void> cleanupDataInconsistencies() async {
+    final user = _auth.currentUser;
+    if (user == null) return;
+
+    // Check if user has both member_accounts entry AND shared_accounts with members
+    final memberAccountDoc = await _firestore
+        .collection('member_accounts')
+        .doc(user.uid)
+        .get();
+
+    final ownedMembersSnapshot = await _firestore
+        .collection('shared_accounts')
+        .doc(user.uid)
+        .collection('members')
+        .where('isActive', isEqualTo: true)
+        .get();
+
+    // If user has both (data inconsistency), prioritize being an owner
+    if (memberAccountDoc.exists && ownedMembersSnapshot.docs.isNotEmpty) {
+      print(
+        '🛠️ Cleaning up data inconsistency: User appears as both owner and member',
+      );
+
+      // Remove the member_accounts entry since user is actually an owner
+      await _firestore.collection('member_accounts').doc(user.uid).delete();
+
+      print('✅ Removed inconsistent member_accounts entry for owner');
     }
   }
 }

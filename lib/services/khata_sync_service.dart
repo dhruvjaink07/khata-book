@@ -205,7 +205,6 @@ class KhataSyncService {
 
     final box = Hive.box<Transaction>('transactions');
     int importedCount = 0;
-
     for (final txnMap in txnsRaw) {
       try {
         final txn = await TransactionEncryption.fromEncryptedJson(
@@ -217,8 +216,11 @@ class KhataSyncService {
           importedCount++;
         }
       } catch (e) {
-        // Log and skip any failed decryptions
-        print('🔄 SYNC FROM CLOUD: Decryption failed for transaction: $e');
+        // Log and skip any failed decryptions (corrupted data)
+        print(
+          '🔄 SYNC FROM CLOUD: Skipping corrupted transaction: ${txnMap['id']} - Error: $e',
+        );
+        // Continue processing other transactions instead of failing completely
       }
     }
 
@@ -341,7 +343,10 @@ class KhataSyncService {
               importedCount++;
             }
           } catch (e) {
-            print('🔄 LISTEN TO CHANGES: Decryption error: $e');
+            print(
+              '🔄 LISTEN TO CHANGES: Skipping corrupted transaction: ${txnMap['id']} - Error: $e',
+            );
+            // Continue processing other transactions
           }
         }
 
