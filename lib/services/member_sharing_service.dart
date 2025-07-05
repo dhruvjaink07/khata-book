@@ -91,9 +91,7 @@ class MemberSharingService {
 
     if (existingMemberDoc.exists) {
       throw Exception('You are already a member of another shared account');
-    }
-
-    // Add user as member to owner's shared_accounts collection
+    } // Add user as member to owner's shared_accounts collection
     final memberData = AccountMember(
       uid: user.uid,
       name: user.displayName ?? 'User',
@@ -118,6 +116,9 @@ class MemberSharingService {
       'ownerPhotoUrl': invitation.ownerPhotoUrl,
       'joinedAt': Timestamp.fromDate(DateTime.now()),
     });
+
+    // Update the owner's khata document with the new member
+    await _updateKhataSharedWith(invitation.ownerUid);
 
     // Deactivate the invitation
     await _firestore.collection('sharing_invitations').doc(invitationId).update(
@@ -224,6 +225,9 @@ class MemberSharingService {
 
     // Remove member's account reference
     await _firestore.collection('member_accounts').doc(memberUid).delete();
+
+    // Update the owner's khata document with the updated member list
+    await _updateKhataSharedWith(user.uid);
   }
 
   /// Leaves a shared account (member only)
@@ -253,6 +257,9 @@ class MemberSharingService {
 
     // Remove member account reference
     await _firestore.collection('member_accounts').doc(user.uid).delete();
+
+    // Update the owner's khata document with the updated member list
+    await _updateKhataSharedWith(ownerUid);
   }
 
   /// Cleans up expired invitations
@@ -293,5 +300,74 @@ class MemberSharingService {
             .asyncMap((_) => getSharedAccountInfo());
       }
     });
+  }
+
+  /// Updates the sharedWith list in the owner's khata document
+  Future<void> _updateKhataSharedWith(String ownerUid) async {
+    try {
+      // Get owner's email from the member_accounts collection or shared_accounts
+      String? ownerEmail;
+
+      // Try to get owner email from any member's record
+      final membersSnapshot = await _firestore
+          .collection('shared_accounts')
+          .doc(ownerUid)
+          .collection('members')
+          .where('isActive', isEqualTo: true)
+          .limit(1)
+          .get();
+
+      if (membersSnapshot.docs.isNotEmpty) {
+        // Get owner email from member data (stored when member joined)
+        final firstMemberDoc = await _firestore
+            .collection('member_accounts')
+            .doc(membersSnapshot.docs.first.id)
+            .get();
+        if (firstMemberDoc.exists) {
+          ownerEmail = firstMemberDoc.data()!['ownerEmail'] as String?;
+        }
+      }
+
+      // Fallback: try to get from current user if they are the owner
+      if (ownerEmail == null) {
+        final currentUser = _auth.currentUser;
+        if (currentUser != null && currentUser.uid == ownerUid) {
+          ownerEmail = currentUser.email;
+        }
+      }
+
+      if (ownerEmail == null) {
+        print('❌ Could not find owner email for UID: $ownerUid');
+        return;
+      }
+
+      // Get all active members
+      final allMembersSnapshot = await _firestore
+          .collection('shared_accounts')
+          .doc(ownerUid)
+          .collection('members')
+          .where('isActive', isEqualTo: true)
+          .get();
+
+      // Build the sharedWith list
+      final List<String> sharedWith = [];
+      for (final memberDoc in allMembersSnapshot.docs) {
+        final memberData = memberDoc.data();
+        final memberEmail = memberData['email'] as String?;
+        if (memberEmail != null && memberEmail.isNotEmpty) {
+          sharedWith.add(memberEmail);
+        }
+      }
+
+      // Update the khata document using OWNER'S EMAIL as document ID
+      await _firestore.collection('khatas').doc(ownerEmail).update({
+        'sharedWith': sharedWith,
+        'lastUpdated': DateTime.now().toUtc().toIso8601String(),
+      });
+
+      print('✅ Updated sharedWith list for owner $ownerEmail: $sharedWith');
+    } catch (e) {
+      print('❌ Error updating sharedWith list: $e');
+    }
   }
 }

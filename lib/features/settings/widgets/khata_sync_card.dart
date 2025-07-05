@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
@@ -666,7 +667,7 @@ class _QRGeneratorDialogState extends State<QRGeneratorDialog> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      'QR code expires in 10 minutes\nMax 5 members allowed',
+                      'QR code expires in 30 days\nMax 5 members allowed',
                       style: Theme.of(context).textTheme.bodySmall,
                       textAlign: TextAlign.center,
                     ),
@@ -794,8 +795,18 @@ class _QRScannerDialogState extends State<QRScannerDialog> {
     });
 
     try {
+      // Parse the QR data JSON to extract the invitation ID
+      final qrData = jsonDecode(barcode.rawValue!);
+
+      // Validate QR data format
+      if (qrData['type'] != 'khata_invitation' || qrData['id'] == null) {
+        throw Exception('Invalid QR code format');
+      }
+
+      final invitationId = qrData['id'] as String;
+
       final success = await MemberSharingService().acceptSharingInvitation(
-        barcode.rawValue!,
+        invitationId,
       );
 
       if (success && mounted) {

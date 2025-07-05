@@ -4,6 +4,7 @@ import 'package:khata/features/add_expense/services/add_expense_service.dart';
 import 'package:khata/features/add_expense/widgets/expense_income_form.dart';
 import 'package:khata/features/transactions/domain/transaction.dart';
 import 'package:khata/l10n/app_localizations.dart';
+import 'package:khata/services/hive_service.dart';
 
 class AddExpenseScreen extends StatefulWidget {
   const AddExpenseScreen({super.key});
@@ -65,9 +66,7 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
         context,
       ).showSnackBar(SnackBar(content: Text('Please enter a valid amount')));
       return;
-    }
-
-    Transaction transaction = Transaction(
+    }    Transaction transaction = Transaction(
       amount: double.parse(_amountController.text),
       title: selectedCategory!,
       category: selectedCategory!,
@@ -77,7 +76,8 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
       id: DateTime.now().millisecondsSinceEpoch.toString(),
       currency: "INR",
     );
-    await box.add(transaction);
+    // Use HiveService for auto-sync
+    await HiveService().addTransaction(transaction);
 
     _amountController.clear();
     _notesController.clear();

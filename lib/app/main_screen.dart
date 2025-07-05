@@ -51,17 +51,28 @@ class _MainScreenState extends State<MainScreen> {
 
     // Perform initial sync if user is already signed in
     _performInitialSyncIfSignedIn();
+
+    // Start real-time sync for shared accounts
+    _startRealtimeSync();
+  }
+
+  void _startRealtimeSync() {
+    final authService = AuthService();
+    if (authService.isSignedIn) {
+      KhataSyncService().startRealTimeSync();
+    }
   }
 
   void _startKhataListener() {
     _khataSub?.cancel();
     final authService = AuthService();
-    final userEmail = authService.userEmail;
-    if (userEmail != null) {
-      _khataSub = KhataSyncService().listenToKhataChanges(userEmail).listen((
-        _,
+    if (authService.isSignedIn) {
+      _khataSub = KhataSyncService().listenToKhataChanges().listen((
+        hasChanges,
       ) {
-        setState(() {}); // Triggers UI update when data changes
+        if (hasChanges) {
+          setState(() {}); // Triggers UI update when data changes
+        }
       });
     }
   }
@@ -97,6 +108,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void dispose() {
     _khataSub?.cancel();
+    KhataSyncService().stopRealTimeSync();
     super.dispose();
   }
 

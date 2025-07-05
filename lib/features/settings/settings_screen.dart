@@ -56,12 +56,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
   void _startKhataListener() {
     _khataSub?.cancel();
     final authService = AuthService();
-    final userEmail = authService.userEmail;
-    if (userEmail != null) {
-      _khataSub = KhataSyncService().listenToKhataChanges(userEmail).listen((
-        _,
+    if (authService.isSignedIn) {
+      _khataSub = KhataSyncService().listenToKhataChanges().listen((
+        hasChanges,
       ) {
-        setState(() {});
+        if (hasChanges) {
+          setState(() {});
+        }
       });
     }
   }
